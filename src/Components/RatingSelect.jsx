@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-function RatingSelect() {
-  const [selected, setSelected] = useState(5);
+function RatingSelect({ select }) {
+  const [selected, setSelected] = useState();
   const handChange = (e) => {
     setSelected(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
   return (
     <ul className="rating">
